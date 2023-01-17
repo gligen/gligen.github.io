@@ -83,6 +83,7 @@
             <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b> University of Wisconsin-Madison; </b></span>
             <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>Columbia University; </span>
             <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b>Microsoft</span>
+            <span class="author-block">&nbsp&nbsp<sup>*</sup>Equal Advising</span>
           </div>
 
 
@@ -136,7 +137,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" width="120%" src="images/teaser_v4.png">
+      <img id="teaser" width="150%" src="images/teaser_v4.png">
       <h2 class="subtitle has-text-centered">
         <p style="font-family:Times New Roman"><b>Figure 1. GLIGEN enables versatile grounding capabilities for a frozen text-to-image generation model.</b></p>
       </h2>
@@ -181,46 +182,49 @@
 
 
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <!-- Abstract. -->
+<section class="section"   style="background-color:#e4e4f781">
+  <div class="columns is-centered has-text-centered">
+      <div style="width:90%;">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Demo Visualization</h2>
-            <div class="column is-full-width">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3"><a href="https://aka.ms/gligen"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5886/5886212.png"> Demo -- Try it out  </a> </h2> 
+          </div>
+        </div>
+        <!-- Abstract. -->
+        <div style="float:left; width:47.1%; border: 0px solid rgba(5, 130, 255, 0.534);">
+          <h2 class="title is-5">I. Generated examples from GLIGEN Demo</h2>
+          <div class="column is-five-fifths">
               <div class="columns is-centered">
-                <img id="teaser" width="80%" src="images/same_box.gif">
+                <img id="teaser" width="100%" src="images/same_box.gif">
               </div>
-              <div class="columns is-centered">
-              <!-- <h1>
-                <p style="font-family:Times New Roman"><b>Demo. Left: Green Apple -> Rabbit, Darkest Red Apple -> Red Pear, Table -> Plate. Middle: Dog Removal, Right: Sky -> Mountain</b>
-              </h1>                  -->
-            </div>
-          
-            </div>
           </div>
         </div>
         <!--/ Abstract. -->
 
-
-        <br>
-        <br>
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Demo Instruction</h2>
+        <div style=" float:right; width:49.8%; border: 0px solid black;">
+          <h2 class="title is-5">II. Demo Instruction</h2>
+          <div class="column is-five-fifths">
+            <div class="columns is-centered">
             <div class="publication-video">
-              <iframe src="https://user-images.githubusercontent.com/6631389/211468127-60dd5c69-8db9-43d2-a45d-e97b336e5249.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src="https://user-images.githubusercontent.com/6631389/211468127-60dd5c69-8db9-43d2-a45d-e97b336e5249.mp4" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
+          </div>
         </div>
+      </div>  
+    </div>     
+</section>
 
-        <br>
-        <br>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Model Designs: Efficient Training & Flexible Inference </h2> 
+      </div>
+    </div>
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-six-fifths">
-            <h2 class="title is-3">Model Designs: Efficient Training & Flexible Inference</h2>
             <div class="content has-text-justified">
               <ul>
                 <li>GLIGEN is built upon existing pretrained diffusion models. whose original weights are <b>frozen</b> to preserve vast pre-trained knowledge.</li>
@@ -232,43 +236,52 @@
             <h3 class="subtitle has-text-centered">
               <p style="font-family:Times New Roman"><b>Figure 2. Gated Self-Attention is used to fuse new grounding tokens.</b></p>
             </h3>   
-            <br>
-            <br>
-            <div class="content has-text-justified">
-              <p>
-                <b>Modulated Design</b>:
-              </p>
-              <ul>
-                Compared with other ways of using a pretrained diffusion model such as full-model finetuning, our approach is modulated and more cost-efficient. Just like Lego, one can plug and play different trained layers to enable different new capabilities.
 
-              </ul>                    
-            </div>          
-            <img id="model" width="80%" src="images/approach_change.gif">
-            <!-- <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 3. Unify different types of vision and vision-language tasks with a single X-Decoder.</b></p>
-            </h3>         -->
 
-            <br>
-            <br>
-            <div class="content has-text-justified">
-              <p>
-                <b>Scheduled Sampling</b>:
-              </p>
-              <ul>
-                As a favorable property of our modulated training, GLIGEN supports scheduled sampling in the diffusion process for inference, where the model can dynamically choose to use grounding tokens (by adding the new layer) or original diffusion model with good prior (by kicking out the new layer), and thus balances generation quality and grounding ability.
-              </ul>                    
-            </div>          
-            <img id="model" width="80%" src="images/approach_sampling.gif">
-            <!-- <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 3. Unify different types of vision and vision-language tasks with a single X-Decoder.</b></p>
-            </h3>         -->
-            </div>
-          </div>
-    </div>
-  
-    <!--/ Paper video. -->          
+        </div>
   </div>
 </section>
+
+
+
+<section class="section"   style="background-color:#e4e4f781">
+  <div class="columns is-centered has-text-centered">
+      <div style="width:90%;">
+
+        <!-- Abstract. -->
+        <div style="float:left; width:47.1%; border: 0px solid black;">
+          <h2 class="title is-5">I. Modulated Training</h2>
+          <div class="content has-text-justified">
+              Compared with other ways of using a pretrained diffusion model such as full-model finetuning, our newly added modulated layers are continual pre-trained on large grounding data (image-text-box) and is more cost-efficient. Just like Lego, one can plug and play different trained layers to enable different new capabilities.                 
+          </div>  
+
+          <div class="column is-five-fifths">
+              <div class="columns is-centered">
+                <img id="modulated_training" width="105%" src="images/approach_change.gif">
+                
+              </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <div style=" float:right; width:47.8%; border: 0px solid black;">
+          <h2 class="title is-5">II. Scheduled Sampling</h2>
+          <div class="content has-text-justified">
+              As a favorable property of our modulated training, GLIGEN supports scheduled sampling in the diffusion process for inference, where the model can dynamically choose to use grounding tokens (by adding the new layer) or original diffusion model with good prior (by kicking out the new layer), and thus balances generation quality and grounding ability.                   
+          </div>  
+
+          <div class="column is-five-fifths">
+              <div class="columns is-centered">
+                <img id="modulated_training" width="97%" src="images/approach_sampling.gif">
+                
+              </div>
+          </div>
+        </div>
+
+      </div>  
+    </div>     
+</section>
+
 
 
 <section class="section">
