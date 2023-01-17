@@ -153,14 +153,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large-scale text-to-image diffusion models have made
+            Large-scale <a href="https://github.com/CompVis/stable-diffusion">text-to-image diffusion models</a> have made
             amazing advances. However, the status quo is to use
             text input alone, which can impede controllability. In this
             work, we propose GLIGEN, <b>G</b>rounded-<b>L</b>anguage-to-<b>I</b>mage
             <b>Gen</b>eration, a novel approach that builds upon and extends
             the functionality of existing pre-trained text-to-image diffusion models 
             by enabling them to also be conditioned on
-            grounding inputs. <b>To preserve the vast concept knowledge
+            <a href="https://github.com/microsoft/GLIP">grounding inputs</a>. <b>To preserve the vast concept knowledge
               of the pre-trained model, we freeze all of its weights and
               inject the grounding information into new trainable layers
               via a gated mechanism</b>. Our model achieves open-world
@@ -228,9 +228,9 @@
                 <b>Key Designs for GLIGEN</b>:
               </p>
               <ul>
-                <li>GLIGEN builds upon existing pretrained diffusion models and <b>freeze</b> original weights to preserve vast knowledge.</li>
-                <li>A new trainable Gated Self-Attention layer absorbing new grounding input is added at each transformer block.</li>
-                <li>Grounding tokens incorporates two information: <b>semantic</b> of grounded entity (encoded text or image) and <b>spatial location</b> (encoded bounding box or keypoints).</li>
+                <li>GLIGEN is built upon existing pretrained diffusion models. whose original weights are <b>frozen</b> to preserve vast pre-trained knowledge.</li>
+                <li>A new trainable Gated Self-Attention layer is added at each transformer block to absorb new grounding input.</li>
+                <li>Each grounding token consists of two types of information: <b>semantic</b> of grounded entity (encoded text or image) and <b>spatial location</b> (encoded bounding box or keypoints).</li>
               </ul>
             </div>        
             <img id="model" width="50%" src="images/approach_v1.png">
@@ -244,7 +244,7 @@
                 <b>Modulated Design</b>:
               </p>
               <ul>
-                Compared with other ways using a pretrained diffusion model such as whole model finetuning, our approach is modulated and more storage-friendly. Just like Lego, one can plug and play different trained layers to achieve different functionalities.
+                Compared with other ways of using a pretrained diffusion model such as full-model finetuning, our approach is modulated and more cost-efficient. Just like Lego, one can plug and play different trained layers to enable different new capabilities.
 
               </ul>                    
             </div>          
@@ -260,7 +260,7 @@
                 <b>Scheduled Sampling</b>:
               </p>
               <ul>
-                As a pretrained diffusion model has rich semantics and high visual quality and training cost is high, GLIGEN supports scheduled sampling in which the model can dynamically choose to use grounding tokens (by adding the new layer) or original diffusion model with good prior (by kicking out the new layer) to balance generation quality and grounding ability.
+                As a favorable property of our modulated training, GLIGEN supports scheduled sampling in the diffusion process for inference, where the model can dynamically choose to use grounding tokens (by adding the new layer) or original diffusion model with good prior (by kicking out the new layer), and thus balances generation quality and grounding ability.
               </ul>                    
             </div>          
             <img id="model" width="80%" src="images/approach_sampling.gif">
